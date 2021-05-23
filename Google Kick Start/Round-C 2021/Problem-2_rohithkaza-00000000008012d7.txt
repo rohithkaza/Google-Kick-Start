@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int r,x;
+    long long int sq,g,c,t,i;
+    scanf("%d",&r);
+    for(x=0;x<r;x++)
+    {
+        c=0;
+        scanf("%lld",&g);
+        sq=(int)(sqrt(2*g)/1);
+        sq+=1;
+        for(i=1;i<=sq;i++)
+        {
+            t=((2*g)-i*(i-1));
+            if(t%(2*i)==0 && t!=0)
+            {
+                c++;
+                // printf("%lld ",i);
+            }
+        }
+        printf("Case #%d: %lld\n",x+1,c);
+    }
+    return 0;
+}

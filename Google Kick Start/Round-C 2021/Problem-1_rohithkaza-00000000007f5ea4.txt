@@ -1,0 +1,21 @@
+from itertools import product
+r=int(input())
+alp=['a','b','c','d','e','f','g','h','i','j','k','l','m',
+'n','o','p','q','r','s','t','u','v','w','x','y','z']
+for x in range(r):
+    c=0
+    n,k=map(int,input().split())
+    s=input()
+    p=int(n//2+n%2)
+    # ans=[]
+    alp2=alp[:k]
+    for i in product(alp2,repeat=p):
+        s2=''.join(i)
+        s2+=s2[:(n//2)][::-1]
+        if(s2<s):
+            # print(s2)
+            c+=1
+    print("Case #",end="")
+    print(x+1,end=":")
+    print("",(c%1000000007))
+    

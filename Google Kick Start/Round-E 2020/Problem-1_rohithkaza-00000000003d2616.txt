@@ -1,0 +1,46 @@
+r=int(input())
+for x in range(r):
+    n=int(input())
+    a=list(map(int,input().split()))
+    c=[]
+    c.append(1)
+    ans=abs(a[0]-a[1])
+    t=0
+    f=0
+    if(a[0]>a[1]):
+        f=1
+    elif(a[0]<a[1]):
+        f=2
+    for i in range(n-1):
+        p=abs(a[i]-a[i+1])
+        f2=0
+        if(a[i]>a[i+1]):
+            f2=1
+        elif(a[i]<a[i+1]):
+            f2=2
+        if(p==ans):
+            if(f==f2):
+                c[t]+=1
+            else:
+                c.append(2)
+                f=0
+                if(a[i]>a[i+1]):
+                    f=1
+                elif(a[i]<a[i+1]):
+                    f=2
+                t+=1    
+        else:
+            c.append(2)
+            f=0
+            if(a[i]>a[i+1]):
+                f=1
+            elif(a[i]<a[i+1]):
+                f=2
+            t+=1
+            ans=p
+    print("Case #",end="")
+    print(x+1,end="")
+    print(": ",end="")
+    print(max(c))
+        
+        
